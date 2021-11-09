@@ -7,6 +7,9 @@ on:
   pull_request:
     branches: [main]
 
+env:
+  IMAGE_NAME: fairhivelabs/${{ github.repository }}
+
 jobs:
   lint:
     name: Lint files
@@ -56,5 +59,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          image: fairhivelabs/timestampvm
-          tags: v1.6.2, latest
+          tags: ${{ env.IMAGE_NAME }}:v1.6.2, ${{ env.IMAGE_NAME }}:latest
