@@ -42,6 +42,21 @@ jobs:
     needs: build-test
     steps:
       -
+        name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: fairhivelabs/timestampvm
+          # generate Docker tags based on the following events/attributes
+          tags: |
+            type=schedule
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            type=sha
+      -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       -
@@ -59,4 +74,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ env.IMAGE_NAME }}:v1.6.2, ${{ env.IMAGE_NAME }}:latest
+          tags: ${{ steps.meta.outputs.tags }}
