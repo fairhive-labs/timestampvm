@@ -1,5 +1,5 @@
 FROM golang as plugin
-ENV VM_NAME "tGas3T58KzdjLHhBDMnH2TvrddhqTji5iZAMZ3RXs2NLpSnhH"
+ENV VM_NAME "n6B2UdbyGWn8modJUZQ1RivVUbVdn5hwcFKnE9bf1KLZGPjNX"
 WORKDIR /go/src/
 COPY . .
 RUN go build -o build/${VM_NAME} main/*.go
