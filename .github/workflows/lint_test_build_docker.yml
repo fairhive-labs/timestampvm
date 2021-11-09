@@ -7,9 +7,6 @@ on:
   pull_request:
     branches: [main]
 
-env:
-  IMAGE_NAME: fairhivelabs/${{ github.repository }}
-
 jobs:
   lint:
     name: Lint files
@@ -50,11 +47,8 @@ jobs:
           # generate Docker tags based on the following events/attributes
           tags: |
             type=schedule
-            type=ref,event=branch
-            type=ref,event=pr
+            type=ref,event=tag
             type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
             type=sha
       -
         name: Set up QEMU
