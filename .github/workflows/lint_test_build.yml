@@ -3,6 +3,7 @@ name: Lint+Test+Build+Docker
 on:
   push:
     branches: [main]
+    tags: [ 'v*.*.*' ]
   pull_request:
     branches: [main]
 
@@ -55,4 +56,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: fairhivelabs/timestampvm:latest
+          image: fairhivelabs/timestampvm
+          tags: v1.6.2, latest
