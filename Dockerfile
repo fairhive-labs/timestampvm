@@ -4,6 +4,6 @@ WORKDIR /go/src/
 COPY . .
 RUN go build -o build/${VM_NAME} main/*.go
 
-FROM avaplatform/avalanchego:v1.6.2
+FROM avaplatform/avalanchego:v1.6.4
 WORKDIR /avalanchego/build
 COPY --from=plugin /go/src/build/ plugins/
