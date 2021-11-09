@@ -49,7 +49,7 @@ jobs:
             type=schedule
             type=raw,value=latest,enable=${{ endsWith(GitHub.ref, 'main') }}
             type=semver,pattern={{version}}
-            type=sha
+            type=sha,format=long
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
