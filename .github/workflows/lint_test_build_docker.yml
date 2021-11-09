@@ -48,7 +48,6 @@ jobs:
           tags: |
             type=schedule
             type=raw,value=latest,enable=${{ endsWith(GitHub.ref, 'main') }}
-            type=ref,event=branch
             type=semver,pattern={{version}}
             type=sha
       -
