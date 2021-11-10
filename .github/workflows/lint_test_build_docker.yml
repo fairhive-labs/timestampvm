@@ -35,6 +35,7 @@ jobs:
         run: .github/workflows/build_and_test.sh
   
   docker:
+    name: Docker build & push
     runs-on: ubuntu-latest
     needs: build-test
     steps:
