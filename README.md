@@ -1,4 +1,5 @@
-# Timestamp Virtual Machine
+# Timestamp Virtual Machine 
+[![Lint+Test+Build+Docker](https://github.com/fairhive-labs/timestampvm/actions/workflows/lint_test_build_docker.yml/badge.svg)](https://github.com/fairhive-labs/timestampvm/actions/workflows/lint_test_build_docker.yml)
 
 Avalanche is a network composed of multiple blockchains. Each blockchain is an instance of a [Virtual Machine (VM)](https://docs.avax.network/learn/platform-overview#virtual-machines), much like an object in an object-oriented language is an instance of a class. That is, the VM defines the behavior of the blockchain.
 
